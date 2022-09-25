@@ -14,8 +14,12 @@ public class ArrayExample {
             }
             if (!isAlreadyInArray) {
                 int current = removedDuplicatesArray.length;
-                removedDuplicatesArray = new String[current + 1];
-                removedDuplicatesArray[current] = original;
+                String[] newTable = new String[current + 1];
+                for (int i = 0; i < current; i++) {
+                    newTable[i] = removedDuplicatesArray[i];
+                }
+                newTable[current] = original;
+                removedDuplicatesArray = newTable;
             }
         }
         return removedDuplicatesArray;
